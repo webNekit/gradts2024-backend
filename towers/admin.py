@@ -1,6 +1,13 @@
 from django.contrib import admin
 from .models import Brand, Crane, SEO
 
+
+class SEOInline(admin.StackedInline):
+    model = SEO
+    extra = 1
+    verbose_name = "Настройка СЕО"
+    verbose_name_plural = "Настройки СЕО"
+
 # Register your models here.
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
@@ -13,6 +20,7 @@ class CraneAdmin(admin.ModelAdmin):
     list_display = ('name', 'brand', 'is_active', 'is_featered')
     list_filter = ('is_active', 'is_featered')
     prepopulated_fields = {'slug': ('name',)}
+    inlines = [SEOInline]
 
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == "brand":
