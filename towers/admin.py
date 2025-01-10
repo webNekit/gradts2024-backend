@@ -1,8 +1,9 @@
 from django.contrib import admin
+from unfold.admin import ModelAdmin, StackedInline
 from .models import Brand, Crane, SEO
 
 
-class SEOInline(admin.StackedInline):
+class SeoCraneInline(admin.TabularInline):
     model = SEO
     extra = 1
     verbose_name = "Настройка СЕО"
@@ -10,17 +11,17 @@ class SEOInline(admin.StackedInline):
 
 # Register your models here.
 @admin.register(Brand)
-class BrandAdmin(admin.ModelAdmin):
+class BrandAdmin(ModelAdmin):
     list_display = ('name', 'is_active')
     list_filter = ('is_active',)
     prepopulated_fields = {'slug': ('name',)}
 
 @admin.register(Crane)
-class CraneAdmin(admin.ModelAdmin):
+class CraneAdmin(ModelAdmin):
     list_display = ('name', 'brand', 'is_active', 'is_featered')
     list_filter = ('is_active', 'is_featered')
     prepopulated_fields = {'slug': ('name',)}
-    inlines = [SEOInline]
+    inlines = [SeoCraneInline]
 
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == "brand":
