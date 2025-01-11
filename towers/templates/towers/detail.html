@@ -55,25 +55,29 @@
     <div class="container product-order__container">
         <div class="product-order__inner">
             <h2 class="product-order__title" id="title-order">Запросить стоимость</h2>
-            <div class="product-order__form form">
-                <input type="hidden" value="{{ crane.name }}">
-                <div class="form__group">
-                    <div class="form__item">
-                        <label for="name-main" class="form__label">Ваше имя</label>
-                        <input type="text" class="form__input" name="name" id="name-main" placeholder="Введите свое имя"
-                               autocomplete="off" required>
-                    </div>
-                    <div class="form__item">
-                        <label for="phone-main" class="form__label">Телефон для связи</label>
-                        <input type="text" class="form__input" name="name" id="phone-main"
-                               placeholder="+7(000)000-00-00" autocomplete="off" inputmode="tel" required
-                               data-field-phone>
-                    </div>
-                </div>
-                <button aria-label="Отправить" title="Отправить" type="button"
-                        class="form__button button button--primary">Отправить заявку
-                </button>
-            </div>
+            <form class="product-order__form form"
+      hx-post="{% url 'towers:submit_request' %}"
+      hx-swap="innerHTML"
+      hx-indicator="#product-form-button">
+    <input type="hidden" name="crane_name" value="{{ crane.name }}">
+    <div class="form__group">
+        <div class="form__item">
+            <label for="name-main" class="form__label">Ваше имя</label>
+            <input type="text" class="form__input" name="name" id="name-main" placeholder="Введите свое имя"
+                   autocomplete="off" required>
+        </div>
+        <div class="form__item">
+            <label for="phone-main" class="form__label">Телефон для связи</label>
+            <input type="text" class="form__input" name="phone" id="phone-main"
+                   placeholder="+7(000)000-00-00" autocomplete="off" inputmode="tel" required data-field-phone>
+        </div>
+    </div>
+    <button id="product-form-button" aria-label="Отправить" title="Отправить" type="submit"
+            class="form__button button button--primary">Отправить заявку
+    </button>
+    <div id="message-container"></div>
+</form>
+
         </div>
     </div>
 </section>

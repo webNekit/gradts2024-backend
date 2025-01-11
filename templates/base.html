@@ -53,8 +53,23 @@
     </main>
     {% include 'includes/footer.html' %}
 </div>
+<script src="https://unpkg.com/htmx.org"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+document.body.addEventListener('htmx:configRequest', function(event){
+    event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+});
+</script>
+<script>
+  document.querySelector('.product-order__form').addEventListener('htmx:afterSwap', function(event) {
+    if (event.target.id === 'message-container') {
+      const response = event.detail.xhr.response;
+      document.getElementById('message-container').innerHTML = response.message;
+    }
+  });
+</script>
+
 <script>
     lucide.createIcons();
 </script>
