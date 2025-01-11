@@ -1,0 +1,70 @@
+@use "../helpers" as *;
+
+.story-grid {
+  --image-height: #{rem(570)};
+  display: grid;
+  grid-template-areas:
+          "item-4 item-2 item-1"
+          "item-3 item-2 item-5";
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: calc(var(--image-height) / 2) calc(var(--image-height) / 2);
+  gap: rem(24);
+  @include mobile {
+    grid-template-areas:
+            "item-1"
+            "item-4"
+            "item-2"
+            "item-3"
+            "item-5";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  &__item {
+    height: 100%;
+    &:nth-child(1) {
+      grid-area: item-1;
+    }
+    &:nth-child(2) {
+      grid-area: item-2;
+      .story-grid__item-img {
+        height: 100%;
+        max-height: 100%;
+        @include mobile {
+          height: 100vh;
+          max-height: rem(250);
+        }
+      }
+    }
+    &:nth-child(3) {
+      grid-area: item-3;
+    }
+    &:nth-child(4) {
+      grid-area: item-4;
+    }
+    &:nth-child(5) {
+      grid-area: item-5;
+    }
+    &-body {
+      width: 100%;
+      height: 100%;
+    }
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: rem(22);
+      @include mobile {
+        height: 100vh;
+        max-height: rem(250);
+      }
+    }
+    &-text {
+      @include fluid-text(18, 14);
+
+      text-align: left;
+      line-height: 1.5;
+      color: hsl(var(--muted-foreground));
+    }
+  }
+}

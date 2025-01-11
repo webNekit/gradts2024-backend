@@ -1,0 +1,91 @@
+@use "helpers" as *;
+
+.container {
+  max-width: calc(var(--container-width) + (var(--container-padding-inline) * 2));
+  padding-inline: var(--container-padding-inline);
+  margin-inline: auto;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
+
+.link-more {
+  @include fluid-text(22, 18);
+
+  font-weight: 500;
+}
+
+.tag {
+  font-weight: 500;
+  font-size: rem(16);
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: var(--font-family-primary);
+  color: hsl(var(--foreground));
+  font-weight: 400;
+}
+
+h1, .h1 {
+  @include fluid-text(82, 40);
+}
+
+h2, .h2 {
+  @include fluid-text(56, 31);
+}
+
+h3, .h3 {
+  @include fluid-text(46, 28);
+}
+
+h4, .h4 {
+  @include fluid-text(28, 22);
+}
+
+h5, .h5 {
+  @include fluid-text(18, 16);
+}
+
+h6, .h6 {
+  @include fluid-text(16, 14);
+}
+
+.col {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0,1fr));
+  &--2 {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+  &--3 {
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
+  &--4 {
+    grid-template-columns: repeat(4, minmax(0,1fr));
+  }
+  &--5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  &--6{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}

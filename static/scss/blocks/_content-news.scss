@@ -1,0 +1,36 @@
+@use "../helpers" as *;
+
+.content-news {
+  padding-block-end: rem(64);
+  @include mobile {
+    padding-block-end: rem(42);
+  }
+  &__container {
+    max-width: calc(#{rem(884)} + (var(--container-padding-inline) * 2));
+  }
+  &__inner {
+    padding: rem(48);
+    border-radius: rem(24);
+    background-color: hsl(var(--card));
+    @include mobile {
+      padding: rem(24);
+    }
+  }
+  &__text {
+    &:has(p) p {
+      @include fluid-text(22, 18);
+      line-height: 1.3;
+    }
+    &:has(img) img {
+      width: 100%;
+      height: 100vh;
+      max-height: rem(420);
+      object-fit: cover;
+      object-position: center;
+      border-radius: rem(24);
+      @include mobile {
+        max-height: rem(320);
+      }
+    }
+  }
+}

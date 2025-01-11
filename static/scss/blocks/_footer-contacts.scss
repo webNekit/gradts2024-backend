@@ -1,0 +1,31 @@
+@use "../helpers" as *;
+
+.footer-contacts {
+  justify-self: end;
+  display: grid;
+  row-gap: rem(16);
+  @include mobile {
+    justify-self: unset;
+  }
+  &__list {
+    border: rem(1) solid hsl(var(--border));
+    border-radius: var(--radius);
+  }
+  &__item {
+    &:not(:last-child) {
+      border-bottom: rem(1) solid hsl(var(--border));
+    }
+  }
+  &__link {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: rem(12);
+    column-gap: rem(14);
+    font-size: rem(16);
+    &-index {
+      color: hsl(var(--muted-foreground));
+    }
+    &-value {
+    }
+  }
+}

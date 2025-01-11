@@ -1,0 +1,29 @@
+@use "../helpers" as *;
+
+.product-order {
+  padding-block-end: rem(64);
+  @include mobile {
+    padding-block-end: rem(42);
+  }
+  &__container {
+    max-width: calc(#{rem(884)} + (var(--container-padding-inline) * 2));
+  }
+  &__inner {
+    padding: rem(48);
+    border-radius: rem(24);
+    background-color: hsl(var(--card));
+    display: grid;
+    row-gap: rem(42);
+    @include mobile {
+      padding: rem(24);
+      row-gap: rem(24);
+    }
+  }
+  &__text {
+    display: grid;
+    row-gap: rem(42);
+    @include mobile {
+      row-gap: rem(24);
+    }
+  }
+}

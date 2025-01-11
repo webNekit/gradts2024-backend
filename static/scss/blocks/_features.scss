@@ -1,0 +1,25 @@
+@use "../helpers" as *;
+
+.features {
+  border-radius: rem(10);
+  border: rem(1) solid hsl(var(--border));
+  &__item {
+    padding: rem(18) rem(18);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    column-gap: rem(16);
+    &:not(:first-child) {
+      border-top: rem(1) solid hsl(var(--border));
+    }
+    &-index {
+      text-align: left;
+      color: hsl(var(--muted-foreground));
+    }
+    &-value {
+      text-align: left;
+      font-weight: 500;
+      color: hsl(var(--foreground));
+    }
+  }
+}

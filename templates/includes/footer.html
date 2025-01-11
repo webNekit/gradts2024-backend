@@ -1,0 +1,112 @@
+{% load static %}
+<div role="dialog" aria-labelledby="title-modal" aria-describedby="text-modal" aria-modal="true"
+     aria-label="Модальное меню" class="modal" id="callback-modal" data-callback-modal>
+    <div class="modal__wrapper">
+        <button aria-label="Закрыть модальное окно" title="Закрыть модальное окно" type="button"
+                class="modal__close-btn" data-callback-close>
+            <i data-lucide="x"></i>
+        </button>
+        <div class="modal__container container">
+            <div class="modal__inner">
+                <div class="modal__header">
+                    <h2 class="modal__title h3" id="title-modal">Заявка на обратную связь</h2>
+                    <p class="modal__description" id="text-modal">Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Ducimus, veritatis.</p>
+                </div>
+                <div class="modal__body">
+                    <div class="modal__form form">
+                        <div class="form__group">
+                            <div class="form__item">
+                                <label class="form__label" for="first-name">Имя:</label>
+                                <input type="text" name="first-name" class="form__input" id="first-name"
+                                       autocomplete="off" placeholder="Иван" required>
+                            </div>
+                            <div class="form__item">
+                                <label class="form__label" for="first-name">Фамилия:</label>
+                                <input type="text" name="first-name" class="form__input" id="last-name"
+                                       autocomplete="off" placeholder="Иванов" required>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <div class="form__item">
+                                <label class="form__label" for="email">Email:</label>
+                                <input type="email" name="email" class="form__input" id="email" autocomplete="off"
+                                       placeholder="ivan95@example.ru" required>
+                            </div>
+                            <div class="form__item">
+                                <label class="form__label" for="phone">Телефон:</label>
+                                <input type="text" name="phone" class="form__input" id="phone" autocomplete="off"
+                                       placeholder="+7(000)000-00-00" required>
+                            </div>
+                        </div>
+                        <button aria-label="Отправить" title="Отправить" type="button"
+                                class="form__button button button--primary">Отправить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer" id="footer">
+    <div class="footer__upper">
+        <div class="footer__upper-inner container">
+            <div class="footer__logo logo">
+                <a aria-label="Главная" title="Главная" href="./index.html" class="logo">
+                    <img src="{% static 'images/logo.svg' %}" width="212" height="25" alt="Логотип компании градтехнострой"
+                         class="logo__brand">
+                </a>
+            </div>
+            <nav aria-label="Навигация в подвале" class="footer__navbar footer-navbar">
+                <menu class="footer-navbar__menu">
+                    <li class="footer-navbar__menu-item">
+                        <a aria-label="О компании" title="О компании" href="./about.html"
+                           class="footer-navbar__menu-link">О компании</a>
+                    </li>
+                    <li class="footer-navbar__menu-item">
+                        <a aria-label="Услуги" title="Услуги" href="./services.html" class="footer-navbar__menu-link">Услуги</a>
+                    </li>
+                    <li class="footer-navbar__menu-item">
+                        <a aria-label="Услуги" title="Услуги" href="./services.html" class="footer-navbar__menu-link">Услуги</a>
+                    </li>
+                    <li class="footer-navbar__menu-item">
+                        <a aria-label="Башенные краны" title="Башенные краны" href="./products.html"
+                           class="footer-navbar__menu-link">Башенные краны</a>
+                    </li>
+                    <li class="footer-navbar__menu-item">
+                        <a aria-label="Запасные части" title="Запасные части" href="./products.html"
+                           class="footer-navbar__menu-link">Запасные части</a>
+                    </li>
+                    <li class="footer-navbar__menu-item">
+                        <a aria-label="Новости" title="Новости" href="./news.html" class="footer-navbar__menu-link">Новости</a>
+                    </li>
+                </menu>
+            </nav>
+            <div class="footer-contacts">
+                <h2 class="footer-contacts__title h4">Наши контакты</h2>
+                <ul class="footer__contacts footer-contacts__list">
+                    <li class="footer-contacts__item">
+                        <a href="tel:89692881531" class="footer-contacts__link footer-contacts__link--phone">
+                            <span class="footer-contacts__link-index">Моб.телефон:</span>
+                            <span class="footer-contacts__link-value">89692881531</span>
+                        </a>
+                    </li>
+                    <li class="footer-contacts__item">
+                        <a href="mailto:test@examlpe.com" class="footer-contacts__link footer-contacts__link--mail">
+                            <span class="footer-contacts__link-index">Email:</span>
+                            <span class="footer-contacts__link-value">nayskom@gmail.com</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="footer__bottom-inner container">
+            <p aria-label="© 2025 ГРАДТЕХНОСТРОЙ. Все права защищены" class="footer__copyright">© 2025 ГРАДТЕХНОСТРОЙ.
+                Все права защищены</p>
+            <a aria-label="Дизайн и разработка сайта" href="" target="_blank" class="footer__dev-author">Дизайн и
+                разработка сайта</a>
+        </div>
+    </div>
+</footer>

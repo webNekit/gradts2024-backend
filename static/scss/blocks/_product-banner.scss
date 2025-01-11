@@ -1,0 +1,48 @@
+@use "../helpers" as *;
+
+.product-banner {
+  padding-block-end: fluid(64, 32);
+  &__inner {
+    border-radius: rem(24);
+    padding: fluid(64, 24);
+    display: grid;
+    grid-template-columns: rem(450) 1fr;
+    gap: fluid(42, 24);
+    color: hsl(var(--secondary-foreground));
+    background-color: hsl(var(--secondary));
+    background-size: contain;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__img {
+    height: 100vh;
+    max-height: rem(650);
+    border-radius: rem(24);
+    object-fit: cover;
+    object-position: center;
+    @include mobile {
+      order: 2;
+      max-height: rem(360);
+    }
+  }
+  &__alt {
+    display: grid;
+    align-self: start;
+    row-gap: rem(16);
+    &-title {
+      color: currentColor;
+    }
+    &-description {
+      @include fluid-text(22, 16);
+
+      line-height: 1.2;
+      color: hsla(var(--secondary-foreground), .65);
+    }
+    @include mobile {
+      order: 1;
+    }
+  }
+}

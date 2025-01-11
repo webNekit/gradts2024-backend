@@ -1,0 +1,39 @@
+@use "helpers" as *;
+
+:root {
+  --font-family-primary: "Roboto", sans-serif;
+  --font-family-secondary: "Golos Text", sans-serif;
+
+  --background: 210.0, 15.4%, 94.9%;
+  --foreground: 208.6, 84.0%, 9.8%;
+  --card: 0, 0%, 100%;
+  --card-foreground: 208.6, 84.0%, 9.8%;
+  --popover: 0, 0%, 100%;
+  --popover-foreground: 240, 10%, 3.9%;
+  --primary: 208.7, 100.0%, 40.6%;
+  --primary-foreground: 0.0, 0.0%, 100.0%;
+  --secondary: 208.6, 84.0%, 9.8%;
+  --secondary-foreground: 0.0, 0.0%, 100.0%;
+  --muted: 240, 4.8%, 95.9%;
+  --muted-foreground: 210.0, 10.0%, 39.2%;
+  --accent: 208.7, 100.0%, 40.6%;
+  --accent-foreground: 0.0, 0.0%, 100.0%;
+  --destructive: 0, 84.2%, 60.2%;
+  --destructive-foreground: 0, 0%, 98%;
+  --border: 210.0, 26.3%, 85.1%;
+  --input: 210.0, 26.3%, 85.1%;
+  --ring: 208.6, 84.0%, 9.8%;
+  --radius: #{rem(6)};
+
+  --hover-opacity: 0.8;
+
+  --container-width: #{rem(1410)};
+  --container-padding-inline: #{rem(20)};
+
+  --transition-duration: 200ms;
+
+  @include laptop {
+    --container-width: #{rem(1280)};
+    --container-padding-inline: #{rem(15)};
+  }
+}

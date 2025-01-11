@@ -1,0 +1,38 @@
+/** базовые компоненты */
+@use "normalize";
+@use "fonts";
+@use "variables";
+@use "utils";
+@use "globals";
+
+/** блоки и компоненты */
+@use "./blocks/button";
+@use "./blocks/icons";
+@use "./blocks/header";
+@use "./blocks/callback";
+@use "./blocks/navigation";
+@use "./blocks/hero";
+@use "./blocks/section";
+@use "./blocks/story-grid";
+@use "./blocks/services-list";
+@use "./blocks/service-card";
+@use "./blocks/feedback";
+@use "./blocks/crane-products";
+@use "./blocks/product-card";
+@use "./blocks/product-banner";
+@use "./blocks/product-content";
+@use "./blocks/product-order";
+@use "./blocks/features";
+@use "./blocks/news";
+@use "./blocks/content-news";
+@use "./blocks/banner-news";
+@use "./blocks/modal";
+@use "./blocks/form";
+@use "./blocks/contacts-section";
+@use "./blocks/statistics";
+@use "./blocks/about-alt";
+@use "./blocks/advantages";
+@use "./blocks/advantage-card";
+@use "./blocks/footer-navbar";
+@use "./blocks/footer-contacts";
+@use "./blocks/footer";

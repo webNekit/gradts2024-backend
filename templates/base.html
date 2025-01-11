@@ -1,0 +1,62 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block meta %}
+    <meta name="title" content="{{ meta_title|default:'Продажа башенных кранов в Волгограде и по всей России — Качество и надежность' }}">
+    <meta name="description" content="{{ meta_description|default:'Компания ГРАДТЕХНОСТРОЙ по продаже башенных кранов в Волгограде и других регионах России. Мы предлагаем новые и б/у краны для строительных работ. Гарантия качества, доставка по всей стране.' }}">
+    <meta name="keywords" content="{{ meta_keywords|default:'продажа башенных кранов, башенные краны Волгоград, башенные краны Россия, кран для строительства, купить башенный кран, аренда башенных кранов, башенные краны новые и б/у, доставка башенных кранов, строительное оборудование Волгоград.' }}">
+    <meta name="author" content="ГРАДТЕХНОСТРОЙ">
+    <meta property="og:title" content="{{ meta_title|default:'Продажа башенных кранов в Волгограде и по всей России — Качество и надежность' }}">
+    <meta property="og:description" content="{{ meta_description|default:'Компания ГРАДТЕХНОСТРОЙ по продаже башенных кранов в Волгограде и других регионах России. Мы предлагаем новые и б/у краны для строительных работ. Гарантия качества, доставка по всей стране.' }}">
+    <meta property="og:image" content="{% if meta_image %}{{ meta_image }}{% else %}{% static 'images/hero/img-1.jpg' %}{% endif %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="ГРАДТЕХНОСТРОЙ">
+    <meta name="twitter:card" content="{% if meta_image %}{{ meta_image }}{% else %}{% static 'images/hero/img-1.jpg' %}{% endif %}">
+    <meta name="twitter:title" content="{{ meta_title|default:'Продажа башенных кранов в Волгограде и по всей России — Качество и надежность' }}">
+    <meta name="twitter:description" content="{{ meta_description|default:'Компания ГРАДТЕХНОСТРОЙ по продаже башенных кранов в Волгограде и других регионах России. Мы предлагаем новые и б/у краны для строительных работ. Гарантия качества, доставка по всей стране.' }}">
+    <meta name="twitter:image" content="{% if meta_image %}{{ meta_image }}{% else %}{% static 'images/hero/img-1.jpg' %}{% endif %}">
+    <meta name="twitter:site" content="{{ request.build_absolute_uri }}">
+    {% endblock %}
+    <meta name="geo.region" content="RU-MOW">
+    <meta name="geo.placename" content="Волгоград">
+    <meta name="geo.position" content="48.8047;44.5858">
+    <meta name="ICBM" content="48.8047;44.5858">
+    <meta name="robots" content="index, follow">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Градтехнострой">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://example.com">
+    <!-- Favicons -->
+    <link rel="icon" href="{% static 'icons/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'icons/favicon.ico' %}">
+    <title>Градтехнострой | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <script src="{% static 'scripts/imask.js' %}" defer></script>
+    <script src="{% static 'scripts/main.js' %}" type="module" defer></script>
+</head>
+<body class="application" id="application">
+<div class="application__wrapper" id="application-wrapper">
+    {% include 'includes/header.html' %}
+    <main class="main" id="main">
+        <div class="main__wrapper">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    {% include 'includes/footer.html' %}
+</div>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>

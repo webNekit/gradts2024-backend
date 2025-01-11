@@ -1,0 +1,64 @@
+@use "../helpers" as *;
+
+.hero {
+  padding-block: fluid(64, 46);
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: rem(48);
+    @include mobile {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      column-gap: unset;
+      row-gap: rem(60);
+    }
+    &-preview {
+      width: 100%;
+      height: 100vh;
+      max-height: rem(700);
+      @include mobile {
+        order: 2;
+        max-height: rem(350);
+      }
+    }
+    &-img {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: rem(24);
+    }
+    &-info {
+      display: flex;
+      flex-direction: column;
+      @include mobile {
+        display: grid;
+        row-gap: rem(42);
+        order: 1;
+      }
+    }
+    &-bottom {
+      margin-block-start: auto;
+      @include mobile {
+        justify-self: center;
+      }
+      @include mobile-small {
+        width: 100%;
+      }
+    }
+  }
+  &__title {
+    @include mobile {
+      text-align: center;
+    }
+  }
+  &__services-link {
+    @include fluid-text(22, 18);
+    font-weight: 400;
+    @include mobile-small {
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+}

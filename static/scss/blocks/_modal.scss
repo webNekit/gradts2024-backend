@@ -1,0 +1,58 @@
+@use "../helpers" as *;
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  transform: translateY(-100%);
+  transition: transform 300ms;
+  background-color: hsla(var(--secondary), .95);
+  &.is-active {
+    transform: translateY(0);
+  }
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__inner {
+    max-width: rem(650);
+    width: 100%;
+    display: grid;
+    row-gap: rem(32);
+    padding: rem(32);
+    border-radius: rem(24);
+    background-color: hsl(var(--card));
+  }
+  &__header {
+    display: grid;
+    row-gap: rem(8);
+  }
+  &__title {
+    color: inherit;
+  }
+  &__close-btn {
+    --size: #{rem(64)};
+    @include square(var(--size));
+
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: hsl(var(--primary));
+    border-bottom-left-radius: var(--radius);
+    &:has(svg) {
+      svg {
+        stroke: hsl(var(--primary-foreground));
+      }
+    }
+    @include mobile {
+      --size: #{rem(52)};
+    }
+  }
+}

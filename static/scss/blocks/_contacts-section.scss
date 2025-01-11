@@ -1,0 +1,63 @@
+@use "../helpers" as *;
+
+.contacts-section {
+  padding-block-end: rem(64);
+ &__inner {
+   display: grid;
+   grid-template-columns: repeat(2, minmax(0, 1fr));
+   gap: fluid(52, 24);
+   padding: fluid(42, 24);
+   padding-block-start: fluid(114, 64);
+   border-radius: rem(24);
+   color: hsl(var(--secondary-foreground));
+   background-color: hsl(var(--secondary));
+   background-position: left top;
+   background-repeat: no-repeat;
+   background-size: contain;
+   @include mobile {
+     grid-template-columns: 1fr;
+   }
+ }
+ &__alt {
+   display: grid;
+   row-gap: rem(48);
+   &-top {
+     display: grid;
+     row-gap: rem(16);
+   }
+ }
+ &__title {
+   color: currentColor;
+ }
+ &__description {
+   @include fluid-text(22, 18);
+   color: hsla(var(--secondary-foreground), .65);
+ }
+ &__list {
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   column-gap: fluid(70, 48);
+   @include mobile {
+     grid-template-columns: 1fr;
+     column-gap: unset;
+     row-gap: rem(24);
+   }
+   &-link {
+     display: grid;
+     row-gap: rem(16);
+     &-index {
+       @include fluid-text(22, 16);
+       color: hsl(var(--muted-foreground));
+     }
+     &-value {
+       @include fluid-text(24, 20);
+       color: hsl(var(--secondary-foreground));
+     }
+   }
+ }
+ &__form {
+   padding: fluid(40, 24);
+   border-radius: rem(24);
+   background-color: hsl(var(--card));
+ }
+}

@@ -1,0 +1,17 @@
+@use "../helpers" as *;
+
+.footer-navbar {
+  justify-self: center;
+  &__menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem(14);
+    &-link {
+      font-size: rem(16);
+    }
+  }
+}

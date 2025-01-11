@@ -1,0 +1,74 @@
+@use "../helpers" as *;
+
+.section {
+  padding-block: fluid(120, 64);
+  &.about .section__wrapper {
+    @include mobile {
+      grid-template-columns: 1fr;
+      column-gap: unset;
+      row-gap: rem(16);
+    }
+  }
+  &__container {
+    &:has(.section__header + .section__body) {
+      display: grid;
+      row-gap: fluid(84, 64);
+    }
+  }
+  &__header {
+    &:has(a) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      @include mobile-small {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        row-gap: rem(24);
+      }
+    }
+    &:has(a) a {
+      @include mobile-small-above {
+        align-self: start;
+        justify-self: end;
+      }
+    }
+    &:has(.section__header-right) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: fluid(42, 24);
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+    }
+    &:not(:has(> a)) .section__header-info {
+      max-width: rem(590);
+    }
+    &-info {
+      display: grid;
+      row-gap: rem(14);
+    }
+
+  }
+  &__content {
+    display: grid;
+    row-gap: fluid(48, 32);
+    &-info {
+      display: grid;
+      row-gap: fluid(25, 15);
+    }
+  }
+  &__description {
+    @include fluid-text(24, 18);
+    line-height: 1.3;
+    color: hsl(var(--muted-foreground));
+  }
+  &__button {
+    @include fluid-text(22, 18);
+    font-weight: 400;
+    justify-self: start;
+    @include mobile-small {
+      text-align: center;
+      justify-self: unset;
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}

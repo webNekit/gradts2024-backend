@@ -16,8 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+# add url static files https://docs.djangoproject.com/en/5.1/howto/static-files/
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('services/', include('services.urls', namespace='services')),
-]
+    path('', include('main.urls', namespace='main')),
+    path('tower-cranes/', include('towers.urls', namespace='towers')),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,23 @@
+@use "../helpers" as *;
+
+.feedback {
+  padding-block: fluid(64, 42);
+  &__wrapper {
+    border-radius: rem(42);
+    padding: fluid(115, 60) fluid(205, 24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: rem(15);
+    background-color: hsl(var(--secondary));
+    &-title {
+      text-align: center;
+      color: hsl(var(--secondary-foreground));
+    }
+    &-description {
+      text-align: center;
+      color: hsl(var(--muted-foreground));
+    }
+  }
+}

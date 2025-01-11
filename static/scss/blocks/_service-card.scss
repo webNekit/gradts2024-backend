@@ -1,0 +1,40 @@
+@use "../helpers" as *;
+
+.service-card {
+  display: flex;
+  align-items: flex-start;
+  padding-block: rem(64);
+  border-bottom: rem(1) solid hsl(var(--border));
+  @include mobile {
+    column-gap: rem(12);
+  }
+  &__count {
+    flex: 1;
+    &::before {
+      @include fluid-text(36, 24);
+
+      font-weight: 500;
+      color: hsl(var(--primary));
+    }
+  }
+  &__body {
+    flex-shrink: 1;
+    display: grid;
+    row-gap: rem(24);
+    &-title {
+      color: hsl(var(--muted-foreground));
+      text-align: left;
+    }
+    &-description {
+      &:has(p) {
+        p {
+          @include fluid-text(20, 16);
+
+          text-align: left;
+          color: hsl(var(--muted-foreground));
+        }
+      }
+    }
+  }
+
+}

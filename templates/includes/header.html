@@ -1,0 +1,59 @@
+{% load static %}
+<header class="header" id="header" data-header>
+    <div class="header__container container">
+        <div class="header__logo logo">
+            <a aria-label="Главная" title="Главная" href="{% url 'main:index' %}" class="logo">
+                <img src="{% static 'images/logo.svg' %}" width="212" height="25" alt="Логотип компании градтехнострой"
+                     class="logo__brand">
+            </a>
+        </div>
+        <div class="header__overlay-menu" id="menu-overlay" data-overlay-menu>
+            <nav aria-label="Основная навигация" class="header__navigation navigation" id="navigation">
+                <ul aria-label="Список навигации" class="navigation__list">
+                    <li aria-label="Элемент списка навигации" class="navigation__list-item">
+                        <a aria-label="Главная" title="Главная" href="{% url 'main:index' %}" class="navigation__list-link">Главная</a>
+                    </li>
+                    <li aria-label="Элемент списка навигации" class="navigation__list-item">
+                        <a aria-label="О компании" title="О компании" href="./about.html" class="navigation__list-link">О
+                            компании</a>
+                    </li>
+                    <li aria-label="Элемент списка навигации" class="navigation__list-item">
+                        <a aria-label="Услуги" title="Услуги" href="./services.html" class="navigation__list-link">Услуги</a>
+                    </li>
+                    <li aria-label="Элемент списка навигации" class="navigation__list-item">
+                        <a aria-label="Башененные краны" title="Башененные краны" href="{% url 'towers:index' %}"
+                           class="navigation__list-link">Краны</a>
+                    </li>
+                    <li aria-label="Элемент списка навигации" class="navigation__list-item">
+                        <a aria-label="Запасные части" title="Запасные части" href="./index.html"
+                           class="navigation__list-link">Запасные части</a>
+                    </li>
+                    <li aria-label="Элемент списка навигации" class="navigation__list-item">
+                        <a aria-label="Новости" title="Новости" href="./index.html" class="navigation__list-link">Новости</a>
+                    </li>
+                    <li aria-label="Элемент списка навигации" class="navigation__list-item">
+                        <a aria-label="Контакты" title="Контакты" href="./contacts.html" class="navigation__list-link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <ul aria-label="Список контактных связей" class="header__callback callback">
+                <li aria-label="Элемент списка контактных связей" class="callback__item">
+                    <a aria-label="Номер телефона +7 (844) 257-40-02" title="Номер телефона +7 (844) 257-40-02"
+                       href="tel:+78442574002" class="callback__phone">
+                        <span class="icon icon--phone"
+                              style="--icon: url('../icons/phone.svg')">+7 (844) 257-40-02</span>
+                    </a>
+                </li>
+                <li aria-label="Элемент списка контактных связей" class="callback__item">
+                    <button aria-label="Заказать звонок" title="Заказать звонок"
+                            class="callback__button-modal button button--outline" data-callback-button>Заказать звонок
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <button aria-label="Открыть мобильное меню" title="Открыть мобильное меню"
+                class="header__burger-menu burger-menu visible-mobile" data-burger-menu>
+            <i data-lucide="align-right"></i>
+        </button>
+    </div>
+</header>

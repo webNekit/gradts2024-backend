@@ -1,0 +1,36 @@
+@use "../helpers" as *;
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  column-gap: rem(10);
+  &::before {
+    --size: #{rem(24)};
+    @include square(var(--size));
+
+    content: "";
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    @include laptop {
+      --size: #{rem(20)};
+    }
+  }
+  &--arrow-right {
+    &::before {
+      order: 2;
+      background-image: var(--icon);
+    }
+  }
+  &--eye {
+    &::before {
+      background-image: var(--icon);
+    }
+  }
+  &--phone {
+    &::before {
+      background-image: var(--icon);
+    }
+  }
+}

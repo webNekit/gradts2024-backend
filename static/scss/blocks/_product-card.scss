@@ -1,0 +1,59 @@
+@use "../helpers" as *;
+
+.product-card {
+  @include hover {
+    .product-card__body-img {
+      transform: scale(1.1);
+    }
+  }
+  &__wrapper {
+
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: rem(24);
+    padding-block: rem(18);
+    border-top: rem(1) solid hsl(var(--border));
+    &-year {
+      font-weight: 500;
+      font-size: rem(20);
+      color: hsl(var(--foreground));
+    }
+  }
+  &__body {
+    &-preview {
+      width: 100%;
+      height: 100vh;
+      max-height: rem(590);
+      border-radius: rem(5);
+      overflow: hidden;
+      @include mobile-small {
+        height: 100vh;
+        max-height: rem(370);
+      }
+    }
+    &-img {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1);
+      transition: transform 350ms;
+      @include mobile-small {
+        height: 100%;
+        max-height: 100%;
+      }
+    }
+    &-description {
+      @include fluid-text(18, 16);
+
+      padding-block: rem(16);
+      text-align: left;
+      line-height: 1.25;
+      color: hsl(var(--muted-foreground));
+    }
+  }
+}

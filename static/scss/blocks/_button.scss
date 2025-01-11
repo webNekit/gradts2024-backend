@@ -1,0 +1,31 @@
+@use "../helpers" as *;
+
+.button {
+  cursor: pointer;
+  padding: rem(15) rem(19);
+  font-weight: 500;
+  text-align: center;
+  font-size: fluid(18, 14);
+  border-radius: rem(25);
+  border: rem(1) solid transparent;
+  background-color: transparent;
+  transition: color var(--transition-duration), background-color var(--transition-duration), border var(--transition-duration);
+  &--primary {
+    color: hsl(var(--primary-foreground));
+    border-color: hsl(var(--primary));
+    background-color: hsl(var(--primary));
+    @include hover {
+      color: hsl(var(--primary-foreground));
+      background-color: hsla(var(--primary), var(--hover-opacity));
+    }
+  }
+  &--outline {
+    color: hsl(var(--primary));
+    border-color: hsl(var(--primary));
+    background-color: transparent;
+    @include hover {
+      color: hsl(var(--primary-foreground));
+      background-color: hsl(var(--primary));
+    }
+  }
+}

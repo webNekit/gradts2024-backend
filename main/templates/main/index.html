@@ -1,0 +1,592 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %} Главная {% endblock %}
+
+{% block content %}
+<section aria-labelledby="hero-title" class="hero" id="hero">
+    <div class="hero__container container">
+        <div class="hero__content">
+            <div class="hero__content-preview">
+                <img loading="lazy" width="655" height="700" src="{% static 'images/hero/img-2.jpg' %}" alt="Башенный кран"
+                     class="hero__content-img">
+            </div>
+            <div class="hero__content-info">
+                <div class="hero__content-upper">
+                    <h1 id="hero-title" class="hero__title h1">Your success begins with our effective contracts</h1>
+                </div>
+                <div class="hero__content-bottom">
+                    <a aria-label="Посмотреть услуги" title="Посмотреть услуги" href="./services.html"
+                       class="hero__services-link button button--primary">Посмотреть услуги</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- start about -->
+<section aria-labelledby="about-title" aria-describedby="about-description" class="section about" id="about-section">
+    <div class="container section__container">
+        <div class="section__wrapper col col--2">
+            <div class="section__aside">
+                <p class="tag">Наша миссия</p>
+            </div>
+            <div class="section__content">
+                <div class="section__content-info">
+                    <h2 id="about-title" class="section__title h2">Our mission is to deliver high quality work</h2>
+                    <div id="about-description" class="section__description">
+                        <p>
+                            Arcu metus donec mi amet phasellus pulvinar sit. Vel non fusce
+                            consectetur nunc id sed eu arcu. Eget suscipit quam vehicula
+                            cras ac sed nunc molestie. Feugiat etiam sed rhoncus et eu.
+                        </p>
+                    </div>
+                </div>
+                <a aria-labelledby="Читать подробнее" title="Читать подробнее" href="./about.html"
+                   class="section__button button button--primary">Читать подробнее</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section aria-labelledby="story-title" aria-describedby="story-description" class="section story" id="story-section">
+    <div class="section__container container">
+        <header class="section__header">
+            <div class="section__header-info">
+                <p class="section__header-tag tag">Наша история</p>
+                <h2 class="section__header-title h2" id="story-title">An exceptional quality that can’t be beaten</h2>
+            </div>
+        </header>
+        <div class="section__body">
+            <ul class="section__grid story-grid">
+                <li class="story-grid__item">
+                    <div class="story-grid__item-body">
+                        <img loading="lazy" src="./assets/images/story/img-1.png" alt="Башенные краны градтехнострой"
+                             width="430" height="359" class="story-grid__item-img">
+                    </div>
+                </li>
+                <li class="story-grid__item">
+                    <div class="story-grid__item-body">
+                        <img loading="lazy" src="./assets/images/story/img-3.png" alt="Башенные краны градтехнострой"
+                             width="430" height="765" class="story-grid__item-img">
+                    </div>
+                </li>
+                <li class="story-grid__item">
+                    <div class="story-grid__item-body">
+                        <img loading="lazy" src="./assets/images/story/img-2.png" alt="Башенные краны градтехнострой"
+                             width="430" height="510" class="story-grid__item-img">
+                    </div>
+                </li>
+                <li class="story-grid__item">
+                    <div class="story-grid__item-body">
+                        <div class="story-grid__item-text" id="story-description">
+                            <p>
+                                Eget ligula volutpat tellus in lectus nibh
+                                elementum quis. Tortor interdum
+                                pellentesque cras donec mollis mattis
+                                orci. Pellentesque orci euismod semper
+                                velit augue. Ut platea pharetra porttitor
+                                metus cras odio pulvinar. Et ligula urna.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="story-grid__item">
+                    <div class="story-grid__item-body">
+                        <div class="story-grid__item-text">
+                            <p>
+                                Eget ligula volutpat tellus in lectus nibh
+                                elementum quis. Tortor interdum
+                                pellentesque cras donec mollis mattis
+                                orci. Pellentesque orci euismod semper
+                                velit augue. Ut platea pharetra porttitor
+                                metus cras odio pulvinar. Et ligula urna.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section aria-labelledby="crane-title" class="section products" id="crane-section">
+    <div class="container section__container">
+        <header class="section__header">
+            <div class="section__header-info">
+                <p class="section__header-tag tag">Башенные краны</p>
+                <h2 class="section__header-title h2" id="crane-title">Take a look at our most recent projects</h2>
+            </div>
+            <a aria-label="Все краны" title="Все краны" href="./products.html" class="section__link link-more">
+                <span class="link-more__text icon icon--arrow-right" style="--icon: url('../icons/arrow-left.svg')">Смотреть все краны</span>
+            </a>
+        </header>
+        <div class="section__body">
+            <ul aria-label="Список товаров" class="crane-products">
+                <li aria-label="Элемент списка товаров" class="crane-products__item">
+                    <article aria-labelledby="product-name" class="crane-products__card product-card">
+                        <a href="./single-product.html" class="product-card__link">
+                            <div class="product-card__wrapper">
+                                <header class="product-card__header">
+                                    <h3 class="product-card__header-name h4" id="product-name">Башенный кран
+                                        Readmod</h3>
+                                    <time class="product-card__header-year">2025</time>
+                                </header>
+                                <div class="product-card__body">
+                                    <div class="product-card__body-preview">
+                                        <img loading="lazy" src="./assets/images/products/img-1.jpg" width="540"
+                                             height="615" alt="Башенный кран Readmod от компании ГРАДТЕХНОСТРОЙ"
+                                             class="product-card__body-img">
+                                    </div>
+                                    <div class="product-card__body-description">
+                                        <p>Golden Gate Park offers landscapes, museums, and gardens, perfect for walks
+                                            and picnics.</p>
+                                    </div>
+                                </div>
+                                <div class="product-card__footer">
+                                    <ul aria-label="Список характеристик" class="product-card__features features">
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Состояние:</p>
+                                            <p class="features__item-value">Б/У</p>
+                                        </li>
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Производитель:</p>
+                                            <p class="features__item-value">Readmod</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                <li class="crane-products__item">
+                    <article aria-labelledby="product-name" class="crane-products__card product-card">
+                        <a href="./single-product.html" class="product-card__link">
+                            <div class="product-card__wrapper">
+                                <header class="product-card__header">
+                                    <h3 class="product-card__header-name h4" id="product-name">Башенный кран
+                                        Readmod</h3>
+                                    <time class="product-card__header-year">2025</time>
+                                </header>
+                                <div class="product-card__body">
+                                    <div class="product-card__body-preview">
+                                        <img loading="lazy" src="./assets/images/products/img-1.jpg" width="540"
+                                             height="615" alt="Башенный кран Readmod от компании ГРАДТЕХНОСТРОЙ"
+                                             class="product-card__body-img">
+                                    </div>
+                                    <div class="product-card__body-description">
+                                        <p>Golden Gate Park offers landscapes, museums, and gardens, perfect for walks
+                                            and picnics.</p>
+                                    </div>
+                                </div>
+                                <div class="product-card__footer">
+                                    <ul aria-label="Список характеристик" class="product-card__features features">
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Состояние:</p>
+                                            <p class="features__item-value">Б/У</p>
+                                        </li>
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Производитель:</p>
+                                            <p class="features__item-value">Readmod</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                <li class="crane-products__item">
+                    <article aria-labelledby="product-name" class="crane-products__card product-card">
+                        <a href="./single-product.html" class="product-card__link">
+                            <div class="product-card__wrapper">
+                                <header class="product-card__header">
+                                    <h3 class="product-card__header-name h4" id="product-name">Башенный кран
+                                        Readmod</h3>
+                                    <time class="product-card__header-year">2025</time>
+                                </header>
+                                <div class="product-card__body">
+                                    <div class="product-card__body-preview">
+                                        <img loading="lazy" src="./assets/images/products/img-1.jpg" width="540"
+                                             height="615" alt="Башенный кран Readmod от компании ГРАДТЕХНОСТРОЙ"
+                                             class="product-card__body-img">
+                                    </div>
+                                    <div class="product-card__body-description">
+                                        <p>Golden Gate Park offers landscapes, museums, and gardens, perfect for walks
+                                            and picnics.</p>
+                                    </div>
+                                </div>
+                                <div class="product-card__footer">
+                                    <ul aria-label="Список характеристик" class="product-card__features features">
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Состояние:</p>
+                                            <p class="features__item-value">Б/У</p>
+                                        </li>
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Производитель:</p>
+                                            <p class="features__item-value">Readmod</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                <li class="crane-products__item">
+                    <article aria-labelledby="product-name" class="crane-products__card product-card">
+                        <a href="./single-product.html" class="product-card__link">
+                            <div class="product-card__wrapper">
+                                <header class="product-card__header">
+                                    <h3 class="product-card__header-name h4" id="product-name">Башенный кран
+                                        Readmod</h3>
+                                    <time class="product-card__header-year">2025</time>
+                                </header>
+                                <div class="product-card__body">
+                                    <div class="product-card__body-preview">
+                                        <img loading="lazy" src="./assets/images/products/img-1.jpg" width="540"
+                                             height="615" alt="Башенный кран Readmod от компании ГРАДТЕХНОСТРОЙ"
+                                             class="product-card__body-img">
+                                    </div>
+                                    <div class="product-card__body-description">
+                                        <p>Golden Gate Park offers landscapes, museums, and gardens, perfect for walks
+                                            and picnics.</p>
+                                    </div>
+                                </div>
+                                <div class="product-card__footer">
+                                    <ul aria-label="Список характеристик" class="product-card__features features">
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Состояние:</p>
+                                            <p class="features__item-value">Б/У</p>
+                                        </li>
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Производитель:</p>
+                                            <p class="features__item-value">Readmod</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section aria-labelledby="spare-title" class="section products" id="spare-section">
+    <div class="container section__container">
+        <header class="section__header">
+            <div class="section__header-info">
+                <p class="section__header-tag tag">Запасные части</p>
+                <h2 class="section__header-title h2" id="spare-title">Take a look at our most recent projects</h2>
+            </div>
+            <a aria-label="Все запасные части" title="Все запасные части" href="./products.html"
+               class="section__link link-more">
+                <span class="link-more__text icon icon--arrow-right" style="--icon: url('../icons/arrow-left.svg')">Смотреть все запасные части</span>
+            </a>
+        </header>
+        <div class="section__body">
+            <ul aria-label="Список товаров" class="crane-products">
+                <li aria-label="Элемент списка товаров" class="crane-products__item">
+                    <article aria-labelledby="product-name" class="crane-products__card product-card">
+                        <a href="./single-product.html" class="product-card__link">
+                            <div class="product-card__wrapper">
+                                <header class="product-card__header">
+                                    <h3 class="product-card__header-name h4" id="product-name">Башенный кран
+                                        Readmod</h3>
+                                    <time class="product-card__header-year">2025</time>
+                                </header>
+                                <div class="product-card__body">
+                                    <div class="product-card__body-preview">
+                                        <img loading="lazy" src="./assets/images/products/img-1.jpg" width="540"
+                                             height="615" alt="Башенный кран Readmod от компании ГРАДТЕХНОСТРОЙ"
+                                             class="product-card__body-img">
+                                    </div>
+                                    <div class="product-card__body-description">
+                                        <p>Golden Gate Park offers landscapes, museums, and gardens, perfect for walks
+                                            and picnics.</p>
+                                    </div>
+                                </div>
+                                <div class="product-card__footer">
+                                    <ul aria-label="Список характеристик" class="product-card__features features">
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Состояние:</p>
+                                            <p class="features__item-value">Б/У</p>
+                                        </li>
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Производитель:</p>
+                                            <p class="features__item-value">Readmod</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                <li class="crane-products__item">
+                    <article aria-labelledby="product-name" class="crane-products__card product-card">
+                        <a href="./single-product.html" class="product-card__link">
+                            <div class="product-card__wrapper">
+                                <header class="product-card__header">
+                                    <h3 class="product-card__header-name h4" id="product-name">Башенный кран
+                                        Readmod</h3>
+                                    <time class="product-card__header-year">2025</time>
+                                </header>
+                                <div class="product-card__body">
+                                    <div class="product-card__body-preview">
+                                        <img loading="lazy" src="./assets/images/products/img-1.jpg" width="540"
+                                             height="615" alt="Башенный кран Readmod от компании ГРАДТЕХНОСТРОЙ"
+                                             class="product-card__body-img">
+                                    </div>
+                                    <div class="product-card__body-description">
+                                        <p>Golden Gate Park offers landscapes, museums, and gardens, perfect for walks
+                                            and picnics.</p>
+                                    </div>
+                                </div>
+                                <div class="product-card__footer">
+                                    <ul aria-label="Список характеристик" class="product-card__features features">
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Состояние:</p>
+                                            <p class="features__item-value">Б/У</p>
+                                        </li>
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Производитель:</p>
+                                            <p class="features__item-value">Readmod</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                <li class="crane-products__item">
+                    <article aria-labelledby="product-name" class="crane-products__card product-card">
+                        <a href="./single-product.html" class="product-card__link">
+                            <div class="product-card__wrapper">
+                                <header class="product-card__header">
+                                    <h3 class="product-card__header-name h4" id="product-name">Башенный кран
+                                        Readmod</h3>
+                                    <time class="product-card__header-year">2025</time>
+                                </header>
+                                <div class="product-card__body">
+                                    <div class="product-card__body-preview">
+                                        <img loading="lazy" src="./assets/images/products/img-1.jpg" width="540"
+                                             height="615" alt="Башенный кран Readmod от компании ГРАДТЕХНОСТРОЙ"
+                                             class="product-card__body-img">
+                                    </div>
+                                    <div class="product-card__body-description">
+                                        <p>Golden Gate Park offers landscapes, museums, and gardens, perfect for walks
+                                            and picnics.</p>
+                                    </div>
+                                </div>
+                                <div class="product-card__footer">
+                                    <ul aria-label="Список характеристик" class="product-card__features features">
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Состояние:</p>
+                                            <p class="features__item-value">Б/У</p>
+                                        </li>
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Производитель:</p>
+                                            <p class="features__item-value">Readmod</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                <li class="crane-products__item">
+                    <article aria-labelledby="product-name" class="crane-products__card product-card">
+                        <a href="./single-product.html" class="product-card__link">
+                            <div class="product-card__wrapper">
+                                <header class="product-card__header">
+                                    <h3 class="product-card__header-name h4" id="product-name">Башенный кран
+                                        Readmod</h3>
+                                    <time class="product-card__header-year">2025</time>
+                                </header>
+                                <div class="product-card__body">
+                                    <div class="product-card__body-preview">
+                                        <img loading="lazy" src="./assets/images/products/img-1.jpg" width="540"
+                                             height="615" alt="Башенный кран Readmod от компании ГРАДТЕХНОСТРОЙ"
+                                             class="product-card__body-img">
+                                    </div>
+                                    <div class="product-card__body-description">
+                                        <p>Golden Gate Park offers landscapes, museums, and gardens, perfect for walks
+                                            and picnics.</p>
+                                    </div>
+                                </div>
+                                <div class="product-card__footer">
+                                    <ul aria-label="Список характеристик" class="product-card__features features">
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Состояние:</p>
+                                            <p class="features__item-value">Б/У</p>
+                                        </li>
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Производитель:</p>
+                                            <p class="features__item-value">Readmod</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section aria-labelledby="services-title" class="section services" id="services-section">
+    <div class="section__container container">
+        <header class="section__header">
+            <div class="section__header-info">
+                <p class="section__header-tag tag">Наши услуги</p>
+                <h2 class="section__header-title h2" id="services-title">A comprehensive set of services</h2>
+            </div>
+            <a aria-labelledby="Все услуги" title="Все услуги" href="./services.html"
+               class="section__header-link link-more">
+                <span class="link-more__text icon icon--arrow-right" style="--icon: url('../icons/arrow-left.svg')">Все услуги</span>
+            </a>
+        </header>
+        <div class="section__body">
+            <ul aria-label="Список услуг" class="services-list">
+                <li aria-label="Элемент списка услуг" class="services-list__item">
+                    <article aria-label="Карточка услуги" class="services-list__item-card service-card">
+                        <div aria-hidden="true" class="service-card__count"></div>
+                        <div class="service-card__body">
+                            <h3 class="service-card__body-title h3">Remodel construction</h3>
+                            <div class="service-card__body-description">
+                                <p>Sagittis feugiat purus volutpat blandit id. Euismod et lacus diam quisque nunc fames
+                                    morbi nunc in. Enim nulla lacus vitae nunc.</p>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+                <li aria-label="Элемент списка услуг" class="services-list__item">
+                    <article aria-label="Карточка услуги" class="services-list__item-card service-card">
+                        <div aria-hidden="true" class="service-card__count"></div>
+                        <div class="service-card__body">
+                            <h3 class="service-card__body-title h3">Remodel construction</h3>
+                            <div class="service-card__body-description">
+                                <p>Sagittis feugiat purus volutpat blandit id. Euismod et lacus diam quisque nunc fames
+                                    morbi nunc in. Enim nulla lacus vitae nunc.</p>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+                <li aria-label="Элемент списка услуг" class="services-list__item">
+                    <article aria-label="Карточка услуги" class="services-list__item-card service-card">
+                        <div aria-hidden="true" class="service-card__count"></div>
+                        <div class="service-card__body">
+                            <h3 class="service-card__body-title h3">Remodel construction</h3>
+                            <div class="service-card__body-description">
+                                <p>Sagittis feugiat purus volutpat blandit id. Euismod et lacus diam quisque nunc fames
+                                    morbi nunc in. Enim nulla lacus vitae nunc.</p>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+                <li aria-label="Элемент списка услуг" class="services-list__item">
+                    <article aria-label="Карточка услуги" class="services-list__item-card service-card">
+                        <div aria-hidden="true" class="service-card__count"></div>
+                        <div class="service-card__body">
+                            <h3 class="service-card__body-title h3">Remodel construction</h3>
+                            <div class="service-card__body-description">
+                                <p>Sagittis feugiat purus volutpat blandit id. Euismod et lacus diam quisque nunc fames
+                                    morbi nunc in. Enim nulla lacus vitae nunc.</p>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+                <li aria-label="Элемент списка услуг" class="services-list__item">
+                    <article aria-label="Карточка услуги" class="services-list__item-card service-card">
+                        <div aria-hidden="true" class="service-card__count"></div>
+                        <div class="service-card__body">
+                            <h3 class="service-card__body-title h3">Remodel construction</h3>
+                            <div class="service-card__body-description">
+                                <p>Sagittis feugiat purus volutpat blandit id. Euismod et lacus diam quisque nunc fames
+                                    morbi nunc in. Enim nulla lacus vitae nunc.</p>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section aria-labelledby="feedback-title" aria-describedby="feedback-description" class="feedback" id="feedback-section">
+    <div class="feedback__container container">
+        <div class="feedback__wrapper">
+            <p class="feedback__wrapper-tag tag">Вопрос-Ответ</p>
+            <h2 class="feedback__wrapper-title h2" id="feedback-title">Time to take action? Get a quote today.</h2>
+            <div class="feedback__wrapper-description" id="feedback-description">
+                Consectetur sit donec dictumst euismod. Mattis
+                nascetur vel massa curabitur id.
+            </div>
+            <button aria-label="Задать вопрос" title="Задать вопрос" type="button"
+                    class="feedback__wrapper-button button button--primary" data-callback-button>Задать вопрос
+            </button>
+        </div>
+    </div>
+</section>
+<section aria-labelledby="spare-title" class="section news-section" id="news-section">
+    <div class="container section__container">
+        <header class="section__header">
+            <div class="section__header-info">
+                <p class="section__header-tag tag">Новости и статьи</p>
+                <h2 class="section__header-title h2" id="news-title">Take a look at our most recent projects</h2>
+            </div>
+            <a aria-label="Все новости" title="Все новости" href="./news.html" class="section__link link-more">
+                <span class="link-more__text icon icon--arrow-right" style="--icon: url('../icons/arrow-left.svg')">Все новости</span>
+            </a>
+        </header>
+        <div class="section__body">
+            <ul aria-label="Список новостей" class="section__news-list news">
+                <li aria-label="Элемент списка новостей" class="news__item">
+                    <article class="news__item-card news-card">
+                        <div class="news-card__wrapper">
+                            <div class="news-card__info">
+                                <div class="news-card__info-detail">
+                                    <time>10.24.2019</time>
+                                    <h3 class="news-card__info-name h4">12 designers tricks for picking the perfect home
+                                        color palette</h3>
+                                </div>
+                                <a aria-label="Читать подробнее" title="Читать подробнее" href="./single-news.html"
+                                   class="news-card__info-link-detail button button--primary">Читать подробнее</a>
+                            </div>
+                            <img loading="lazy" src="./assets/images/news/img-1.png" alt="Изображение новости"
+                                 width="1340" height="591" class="news-card__img">
+                        </div>
+                    </article>
+                </li>
+                <li aria-label="Элемент списка новостей" class="news__item">
+                    <article class="news__item-card news-card">
+                        <div class="news-card__wrapper">
+                            <div class="news-card__info">
+                                <div class="news-card__info-detail">
+                                    <time>10.24.2019</time>
+                                    <h3 class="news-card__info-name h4">12 designers tricks for picking the perfect home
+                                        color palette</h3>
+                                </div>
+                                <a aria-label="Читать подробнее" title="Читать подробнее" href="./single-news.html"
+                                   class="news-card__info-link-detail button button--primary">Читать подробнее</a>
+                            </div>
+                            <img loading="lazy" src="./assets/images/news/img-1.png" alt="Изображение новости"
+                                 width="1340" height="591" class="news-card__img">
+                        </div>
+                    </article>
+                </li>
+                <li aria-label="Элемент списка новостей" class="news__item">
+                    <article class="news__item-card news-card">
+                        <div class="news-card__wrapper">
+                            <div class="news-card__info">
+                                <div class="news-card__info-detail">
+                                    <time>10.24.2019</time>
+                                    <h3 class="news-card__info-name h4">12 designers tricks for picking the perfect home
+                                        color palette</h3>
+                                </div>
+                                <a aria-label="Читать подробнее" title="Читать подробнее" href="./single-news.html"
+                                   class="news-card__info-link-detail button button--primary">Читать подробнее</a>
+                            </div>
+                            <img loading="lazy" src="./assets/images/news/img-1.png" alt="Изображение новости"
+                                 width="1340" height="591" class="news-card__img">
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

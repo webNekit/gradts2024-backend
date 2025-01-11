@@ -1,0 +1,30 @@
+@use "../helpers" as *;
+
+.advantage-card {
+  padding-block-end: fluid(34, 24);
+  border-block-end: rem(1) solid hsl(var(--border));
+  &__body {
+    display: grid;
+    row-gap: rem(16);
+    &-alt {
+      display: grid;
+      row-gap: rem(16);
+    }
+    &-description {
+      @include fluid-text(20, 16);
+
+      color: hsl(var(--muted-foreground));
+      line-height: 1.2;
+    }
+  }
+  &__icon {
+    &:has(svg) {
+      svg {
+        --size: #{rem(42)};
+        @include square(var(--size));
+
+        stroke: hsl(var(--primary));
+      }
+    }
+  }
+}

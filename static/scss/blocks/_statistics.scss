@@ -1,0 +1,21 @@
+@use "../helpers" as *;
+
+.statistics {
+  &__list {
+    display: grid;
+    row-gap: rem(42);
+    &-card {
+      display: grid;
+      row-gap: rem(38);
+      &-count {
+        @include fluid-text(80, 40);
+        .stat-text {
+          color: hsl(var(--foreground));
+        }
+        .plus {
+          color: hsl(var(--primary));
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@use "../helpers" as *;
+
+.footer {
+  background-color: hsl(var(--background));
+  &__upper {
+    padding-block: rem(42);
+    border-block: rem(1) solid hsl(var(--border));
+    @include mobile {
+      padding-block: rem(28);
+    }
+    &-inner {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: rem(24);
+      @include mobile {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      @include mobile-small {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  &__bottom {
+    padding-block: rem(20);
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: rem(24);
+    }
+  }
+  &__copyright {
+    font-size: rem(14);
+  }
+  &__dev-author {
+    text-align: right;
+    font-size: rem(14);
+  }
+}
+

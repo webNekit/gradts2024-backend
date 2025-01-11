@@ -1,0 +1,21 @@
+@use "../helpers" as *;
+
+.services-list {
+    display: grid;
+    counter-reset: items;
+    &__item {
+      counter-increment: items;
+      &:not(:first-child) {
+          .services-list__item-card {
+            border-top: rem(1) solid hsl(var(--border));
+          }
+      }
+      .services-list__item-card {
+        .service-card__count {
+          &::before {
+            content: "0" counter(items);
+          }
+        }
+      }
+    }
+}

@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'services.apps.ServicesConfig',
     'parts.apps.PartsConfig',
     'articles.apps.ArticlesConfig',
+    'main.apps.MainConfig',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +69,7 @@ ROOT_URLCONF = 'engine.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'], # Директория с общим шаблоном
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,7 +130,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+# Статические файлы
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / "static/"]
+STATIC_ROOT = BASE_DIR / "staticfiles/"
+
+# Медиа-файлы
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / "media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

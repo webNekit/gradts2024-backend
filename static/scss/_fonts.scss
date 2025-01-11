@@ -1,0 +1,14 @@
+@use "helpers" as *;
+
+/** fonts Roboto */
+@include font-face("Roboto", "Roboto/Roboto-Light", 300, normal);
+@include font-face("Roboto", "Roboto/Roboto-Regular", 400, normal);
+@include font-face("Roboto", "Roboto/Roboto-Medium", 500, normal);
+@include font-face("Roboto", "Roboto/Roboto-Bold", 700, normal);
+@include font-face("Roboto", "Roboto/Roboto-Black", 800, normal);
+
+/** fonts GolosText */
+@include font-face("Golos Text", "GolosText/GolosText-Regular", 400, normal);
+@include font-face("Golos Text", "GolosText/GolosText-Medium", 500, normal);
+@include font-face("Golos Text", "GolosText/GolosText-DemiBold", 600, normal);
+@include font-face("Golos Text", "GolosText/GolosText-Bold", 700, normal);

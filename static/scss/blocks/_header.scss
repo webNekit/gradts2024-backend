@@ -1,0 +1,58 @@
+@use "../helpers" as *;
+
+.header {
+  --blur: #{rem(10)};
+  position: sticky;
+  z-index: 80;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding-block: rem(16);
+  background-color: hsl(var(--background));
+  &.is-scroll {
+    transition: border-bottom var(--transition-duration);
+    border-bottom: rem(1) solid hsl(var(--border));
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    column-gap: rem(24);
+  }
+  &__overlay-menu {
+    @include mobile-above {
+      display: contents;
+    }
+    @include mobile {
+      position: fixed;;
+      inset: 0;
+      padding: fluid(42, 24);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      row-gap: rem(36);
+      transition-duration: var(--transition-duration);
+      background-color: hsl(var(--secondary));
+      &:not(.is-active) {
+        @include hide;
+        translate: 100%;
+      }
+    }
+  }
+  &__burger-menu {
+    --size: #{rem(42)};
+    @include square(var(--size));
+
+    z-index: 90;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline-start: auto;
+    border-radius: var(--radius);
+    background-color: hsl(var(--primary));
+    &:has(svg) svg {
+      stroke: hsl(var(--primary-foreground));
+    }
+  }
+}
