@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
+from django.http import HttpResponse
 import requests
 from towers.models import Crane
 
@@ -25,8 +26,6 @@ def detail(request, slug):
         'meta_keywords': seo.meta_keywords,
         'meta_image': crane.image.url
     })
-
-from django.http import HttpResponse
 
 @csrf_exempt
 def submit_request(request):
