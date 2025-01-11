@@ -912,7 +912,7 @@ a[class] {
   color: hsl(var(--primary));
 }
 .service-card__body {
-  flex-shrink: 1;
+  flex: 2;
   display: grid;
   row-gap: 1.5rem;
 }

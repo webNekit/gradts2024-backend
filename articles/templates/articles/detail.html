@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<section aria-labelledby="banner-title" aria-describedby="banner-description" class="banner-news" id="banner-news">
+    <div class="container banner-news__container">
+        <div class="banner-news__header">
+            <time class="banner-news__header-date">{{ article.created_at|date:"d M Y" }}</time>
+            <h1 class="banner-news__header-title h1" id="banner-title">{{ article.title }}</h1>
+            <p class="banner-news__header-text" id="banner-description">{{ article.short_text }}</p>
+        </div>
+        <div class="banner-news__preview">
+            <img loading="lazy" src="{{ meta_image }}" alt="{{ title }}"
+                 class="banner-news__preview-img">
+        </div>
+    </div>
+</section>
+<section aria-label="Контент статьи" class="content-news" id="content-news">
+    <div class="content-news__container container">
+        <div class="content-news__inner">
+            <div class="content-news__text">
+                {{ article.content|safe }}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

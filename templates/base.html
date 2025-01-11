@@ -68,6 +68,16 @@ document.body.addEventListener('htmx:configRequest', function(event){
       document.getElementById('message-container').innerHTML = response.message;
     }
   });
+    document.querySelectorAll('.modal__form, .contacts-section__form').forEach(form => {
+    form.addEventListener('htmx:afterSwap', function(event) {
+        if (event.target.id === 'modal-message-container' || event.target.id === 'contact-message-container') {
+            const response = event.detail.xhr.response;
+            const messageContainer = event.target;
+            messageContainer.innerHTML = response.message || response.error;
+        }
+    });
+});
+
 </script>
 
 <script>

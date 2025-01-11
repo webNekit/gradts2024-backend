@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<section aria-labelledby="contacts-title" aria-describedby="contacts-description" class="contacts-section"
+         id="contacts-section">
+    <div class="contacts-section__container container">
+        <div class="contacts-section__inner" style="background-image: url({% static 'images/contacts/bg-1.svg' %});">
+            <div class="contacts-section__alt">
+                <div class="contacts-section__alt-top">
+                    <h1 class="contacts-section__title h2" id="contacts-title">Наши контакты</h1>
+                    <div class="contacts-section__description" id="contacts-description">
+                        <p>Мы всегда рады вашему обращению! Если у вас есть вопросы или вы хотите обсудить условия
+                            сотрудничества, не стесняйтесь связаться с нами. Мы готовы предоставить необходимую
+                            информацию и помочь вам в решении любых вопросов. Свяжитесь с нами удобным для вас способом
+                            — мы оперативно ответим на ваше сообщение.</p>
+                    </div>
+                </div>
+                <div class="contacts-section__alt-bottom">
+                    <ul class="contacts-section__list">
+                        <li class="contacts-section__list-item">
+                            <a aria-label="Номер телефона" href="tel:+78442574002" class="contacts-section__list-link">
+                                <span class="contacts-section__list-link-index">Номер телефона</span>
+                                <span aria-label="+78442574002" class="contacts-section__list-link-value">+7 (844) 257-40-02</span>
+                            </a>
+                        </li>
+                        <li class="contacts-section__list-item">
+                            <a aria-label="Адрес эл.почты" href="mailto:info@gradts.ru"
+                               class="contacts-section__list-link">
+                                <span class="contacts-section__list-link-index">Адрес эл.почты</span>
+                                <span aria-label="info@gradts.ru" class="contacts-section__list-link-value">info@gradts.ru</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <form class="contacts-section__form form"
+                  hx-post="{% url 'main:submit_request' %}"
+                  hx-target="#contact-message-container"
+                  hx-swap="outerHTML">
+                <div class="form__group">
+                    <div class="form__item">
+                        <label class="form__label" for="contact-first-name">Имя:</label>
+                        <input type="text" name="first-name" class="form__input" id="contact-first-name"
+                               autocomplete="off" placeholder="Иван" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__label" for="contact-last-name">Фамилия:</label>
+                        <input type="text" name="last-name" class="form__input" id="contact-last-name"
+                               autocomplete="off" placeholder="Иванов" required>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="form__item">
+                        <label class="form__label" for="contact-email">Email:</label>
+                        <input type="email" name="email" class="form__input" id="contact-email" autocomplete="off"
+                               placeholder="ivan95@example.ru" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__label" for="contact-phone">Телефон:</label>
+                        <input type="text" name="phone" class="form__input" id="contact-phone" autocomplete="off"
+                               placeholder="+7(000)000-00-00" required data-field-phone>
+                    </div>
+                </div>
+                <button id="contact-form-button" aria-label="Отправить" title="Отправить" type="submit"
+                        class="form__button button button--primary">Отправить
+                </button>
+            </form>
+            <div id="contact-message-container"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}

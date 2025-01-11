@@ -14,11 +14,11 @@
                         <a aria-label="Главная" title="Главная" href="{% url 'main:index' %}" class="navigation__list-link">Главная</a>
                     </li>
                     <li aria-label="Элемент списка навигации" class="navigation__list-item">
-                        <a aria-label="О компании" title="О компании" href="./about.html" class="navigation__list-link">О
+                        <a aria-label="О компании" title="О компании" href="{% url 'main:about' %}" class="navigation__list-link">О
                             компании</a>
                     </li>
                     <li aria-label="Элемент списка навигации" class="navigation__list-item">
-                        <a aria-label="Услуги" title="Услуги" href="./services.html" class="navigation__list-link">Услуги</a>
+                        <a aria-label="Услуги" title="Услуги" href="{% url 'services:index' %}" class="navigation__list-link">Услуги</a>
                     </li>
                     <li aria-label="Элемент списка навигации" class="navigation__list-item">
                         <a aria-label="Башененные краны" title="Башененные краны" href="{% url 'towers:index' %}"
@@ -29,10 +29,10 @@
                            class="navigation__list-link">Запасные части</a>
                     </li>
                     <li aria-label="Элемент списка навигации" class="navigation__list-item">
-                        <a aria-label="Новости" title="Новости" href="./index.html" class="navigation__list-link">Новости</a>
+                        <a aria-label="Новости" title="Новости" href="{% url 'articles:index' %}" class="navigation__list-link">Новости</a>
                     </li>
                     <li aria-label="Элемент списка навигации" class="navigation__list-item">
-                        <a aria-label="Контакты" title="Контакты" href="./contacts.html" class="navigation__list-link">Контакты</a>
+                        <a aria-label="Контакты" title="Контакты" href="{% url 'main:contact' %}" class="navigation__list-link">Контакты</a>
                     </li>
                 </ul>
             </nav>
@@ -41,7 +41,7 @@
                     <a aria-label="Номер телефона +7 (844) 257-40-02" title="Номер телефона +7 (844) 257-40-02"
                        href="tel:+78442574002" class="callback__phone">
                         <span class="icon icon--phone"
-                              style="--icon: url('../icons/phone.svg')">+7 (844) 257-40-02</span>
+                              style="--icon: url({% static 'icons/phone.svg' %})">+7 (844) 257-40-02</span>
                     </a>
                 </li>
                 <li aria-label="Элемент списка контактных связей" class="callback__item">

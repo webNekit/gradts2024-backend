@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<section aria-labelledby="spare-title" class="section news-section" id="news-section">
+    <div class="container section__container">
+        <header class="section__header">
+            <div class="section__header-info">
+                <p class="section__header-tag tag">Новости и статьи</p>
+                <h2 class="section__header-title h2" id="news-title">Свежие материалы и важные события отрасли</h2>
+            </div>
+        </header>
+        <div class="section__body">
+            {% if articles and articles.exists %}
+            <ul aria-label="Список новостей" class="section__news-list news">
+                {% for article in articles %}
+                <li aria-label="Элемент списка новостей" class="news__item">
+                    <article class="news__item-card news-card">
+                        <div class="news-card__wrapper">
+                            <div class="news-card__info">
+                                <div class="news-card__info-detail">
+                                    <time>{{ article.created_at|date:"d M Y" }}</time>
+                                    <h3 class="news-card__info-name h4">{{ article.title }}</h3>
+                                </div>
+                                <a aria-label="Читать подробнее" title="Читать подробнее" href="{% url 'articles:detail' article.slug %}"
+                                   class="news-card__info-link-detail button button--primary">Читать подробнее</a>
+                            </div>
+                            <img loading="lazy" src="{{ article.image.url }}" alt="{{ article.title }}"
+                                 width="1340" height="591" class="news-card__img">
+                        </div>
+                    </article>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

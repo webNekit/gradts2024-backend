@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<section aria-labelledby="services-title" class="section services" id="services-section">
+    <div class="section__container container">
+        <header class="section__header">
+            <div class="section__header-info">
+                <p class="section__header-tag tag">Наши услуги</p>
+                <h2 class="section__header-title h2" id="services-title">Мы предоставляем профессиональные услуги, чтобы вы могли сосредоточиться на главном и доверить остальное нам</h2>
+            </div>
+            <div class="section__header-right">
+                <div class="section__description" id="products-description">
+                    <p></p>
+                </div>
+            </div>
+        </header>
+        <div class="section__body">
+            <ul aria-label="Список услуг" class="services-list">
+                {% if services and services.exists %}
+                {% for service in services %}
+                <li aria-label="Элемент списка услуг" class="services-list__item">
+                    <article aria-label="Карточка услуги" class="services-list__item-card service-card">
+                        <div aria-hidden="true" class="service-card__count"></div>
+                        <div class="service-card__body">
+                            <h3 class="service-card__body-title h3">{{ service.name }}</h3>
+                            <div class="service-card__body-description">
+                                <p>{{ service.description }}</p>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<section aria-label="about-title" aria-describedby="about-description" class="section" id="section">
+    <div class="section__container container">
+        <header class="section__header">
+            <div class="section__header-info">
+                <p class="section__header-tag tag">О компании</p>
+                <h1 class="section__header-title h1" id="about-title">Профессионализм, надежность и качественные решения
+                    для ваших задач</h1>
+            </div>
+        </header>
+        <div class="section__body col col--2">
+            <div class="statistics">
+                <ul class="statistics__list">
+                    <li class="statistics__list-item">
+                        <div class="statistics__list-card">
+                            <p class="statistics__list-card-tag tag">На рынке</p>
+                            <div class="statistics__list-card-count">
+                                <span class="stat-text stat-text--2xl">6 лет</span>
+                                <span class="plus plus--primary">+</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="statistics__list-item">
+                        <div class="statistics__list-card">
+                            <p class="statistics__list-card-tag tag">Поставленной техники</p>
+                            <div class="statistics__list-card-count">
+                                <span class="stat-text stat-text--2xl">25</span>
+                                <span class="plus plus--primary">+</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="about-alt">
+                <div class="about-alt__description" id="about-description">
+                    <p>Наша компания сочетает многолетний опыт, высокий уровень профессионализма и индивидуальный подход
+                        к каждому клиенту. Мы строим доверительные отношения, обеспечивая качество и стабильность на
+                        каждом этапе сотрудничества.</p>
+                    <p>Мы гордимся своей репутацией надежного партнера, который помогает клиентам достигать поставленных
+                        целей. Наши решения основаны на внимании к деталям, ответственности и глубоком понимании ваших
+                        потребностей.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section aria-labelledby="advantages-title" class="section" id="advantages">
+    <div class="section__container container">
+        <header class="section__header">
+            <div class="section__header-info">
+                <p class="section__header-tag tag">Наши преимущества</p>
+                <h2 class="section__header-title h2" id="advantages-title">Почему с нами выгодно сотрудничать</h2>
+            </div>
+        </header>
+        <div class="section__body">
+            <div class="advantages">
+                <ul class="advantages__list">
+                    <li class="advantages__list-item">
+                        <div class="advantage-card">
+                            <div class="advantage-card__body">
+                                <div class="advantage-card__body-alt">
+                                    <h3 class="advantage-card__body-title h3">Опыт и профессионализм</h3>
+                                    <p class="advantage-card__body-description">Мы имеем многолетний опыт в своей
+                                        отрасли и готовы предложить решения, проверенные временем и практикой.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="advantages__list-item">
+                        <div class="advantage-card">
+                            <div class="advantage-card__body">
+                                <div class="advantage-card__body-alt">
+                                    <h3 class="advantage-card__body-title h3">Индивидуальный подход</h3>
+                                    <p class="advantage-card__body-description">Каждый клиент для нас уникален. Мы
+                                        учитываем все особенности вашего бизнеса, чтобы предложить максимально
+                                        эффективное решение.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="advantages__list-item">
+                        <div class="advantage-card">
+                            <div class="advantage-card__body">
+                                <div class="advantage-card__body-alt">
+                                    <h3 class="advantage-card__body-title h3">Качество и надежность</h3>
+                                    <p class="advantage-card__body-description">Мы гарантируем высокий уровень качества
+                                        и надежности в каждом проекте, независимо от его сложности.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="advantages__list-item">
+                        <div class="advantage-card">
+                            <div class="advantage-card__body">
+                                <div class="advantage-card__body-alt">
+                                    <h3 class="advantage-card__body-title h3">Современные технологии</h3>
+                                    <p class="advantage-card__body-description">Мы используем новейшие технологии и
+                                        инновационные подходы для того, чтобы предоставлять актуальные и эффективные
+                                        решения.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="advantages__list-item">
+                        <div class="advantage-card">
+                            <div class="advantage-card__body">
+                                <div class="advantage-card__body-alt">
+                                    <h3 class="advantage-card__body-title h3">Оперативность в работе</h3>
+                                    <p class="advantage-card__body-description">Мы ценим ваше время и всегда готовы
+                                        предложить быстрые решения, уделяя внимание даже самым мелким деталям.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="advantages__list-item">
+                        <div class="advantage-card">
+                            <div class="advantage-card__body">
+                                <div class="advantage-card__body-alt">
+                                    <h3 class="advantage-card__body-title h3">Поддержка на каждом этапе</h3>
+                                    <p class="advantage-card__body-description">От консультации до реализации проекта — мы всегда рядом, чтобы поддержать вас на всех этапах сотрудничества.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
