@@ -1,0 +1,83 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<section aria-labelledby="banner-title" aria-describedby="banner-description" class="product-banner"
+         id="product-banner">
+    <div class="product-banner__container container">
+        <div class="product-banner__inner" style="background-image: url({% static 'images/products/bg-1.svg' %});">
+            <img loading="lazy" src="{{ meta_image }}" alt="{{ title }}" width="1440" height="790"
+                 class="product-banner__img">
+            <div class="product-banner__alt">
+                <p class="product-banner__alt-tag tag">Запасная часть</p>
+                <h1 class="product-banner__alt-title h1" id="banner-title">{{ title }}</h1>
+                <div class="product-banner__alt-description" id="banner-description">
+                    <p>
+                        {{ part.small_text }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section aria-labelledby="title-content" class="product-content" id="product-content">
+    <div class="container product-content__container">
+        <div class="product-content__inner">
+            <div class="product-content__text">
+                <h2 class="product-content__title" id="title-content">Характеристики</h2>
+                <ul aria-label="Список характеристик" class="product-card__features features">
+                    <li aria-label="Элемент списка характеристик" class="features__item">
+                        <p class="features__item-index">Совместимость:</p>
+                        <p class="features__item-value">{{ part.brand }}</p>
+                    </li>
+                    <li aria-label="Элемент списка характеристик" class="features__item">
+                        <p class="features__item-index">Наличие:</p>
+                        <p class="features__item-value">
+                            {% if part.in_stock %}
+                            В наличии
+                            {% else %}
+                            Нет в наличии
+                            {% endif %}
+                        </p>
+                    </li>
+                    <li aria-label="Элемент списка характеристик" class="features__item">
+                        <p class="features__item-index">SKU</p>
+                        <p class="features__item-value">{{ part.sku }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section aria-labelledby="title-order" class="product-order">
+    <div class="container product-order__container">
+        <div class="product-order__inner">
+            <h2 class="product-order__title" id="title-order">Запросить стоимость</h2>
+            <form class="product-order__form form"
+                  hx-post="{% url 'parts:submit_request' %}"
+                  hx-swap="innerHTML"
+                  hx-indicator="#product-form-button">
+                <input type="hidden" name="part_name" value="{{ part.name }}">
+                <div class="form__group">
+                    <div class="form__item">
+                        <label for="name-main" class="form__label">Ваше имя</label>
+                        <input type="text" class="form__input" name="name" id="name-main" placeholder="Введите свое имя"
+                               autocomplete="off" required>
+                    </div>
+                    <div class="form__item">
+                        <label for="phone-main" class="form__label">Телефон для связи</label>
+                        <input type="text" class="form__input" name="phone" id="phone-main"
+                               placeholder="+7(000)000-00-00" autocomplete="off" inputmode="tel" required
+                               data-field-phone>
+                    </div>
+                </div>
+                <button id="product-form-button" aria-label="Отправить" title="Отправить" type="submit"
+                        class="form__button button button--primary">Отправить заявку
+                </button>
+                <div id="message-container"></div>
+            </form>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

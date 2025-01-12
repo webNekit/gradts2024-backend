@@ -1,0 +1,112 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<section aria-labelledby="part-title" aria-describedby="" class="section products" id="part-section">
+    <div class="container section__container">
+        <header class="section__header">
+            <div class="section__header-info">
+                <p class="section__header-tag tag">{{ title }}</p>
+                <h2 class="section__header-title h2" id="part-title">Запасные части для башенных кранов — надежность и
+                    долговечность вашего оборудования</h2>
+            </div>
+            <div class="section__header-right">
+                <div class="section__description" id="products-description">
+                    <p>В разделе запасных частей для башенных кранов вы найдете все необходимые компоненты для
+                        обслуживания и ремонта. Мы предлагаем оригинальные запчасти, которые обеспечат долгосрочную
+                        работу вашего оборудования и предотвратят возможные поломки.</p>
+                </div>
+            </div>
+        </header>
+        <div class="filter-category">
+            <h3 class="filter-category__title h4">Фильтр по категориям</h3>
+            <ul class="filter-category__list">
+                {% if categories and categories.exists %}
+                <li class="filter-category__item">
+                    <a href="?" class="filter-category__button {% if not selected_category %}active{% endif %}">
+                        Все категории
+                    </a>
+                </li>
+                {% for category in categories %}
+                <li class="filter-category__item">
+                    <a href="?category={{ category.slug }}" class="filter-category__button">
+                        {{ category.name }}
+                    </a>
+                </li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+        <div class="section__body">
+            <ul aria-label="Список товаров" class="crane-products">
+                {% if page_obj %}
+                {% for part in page_obj %}
+                <li aria-label="Элемент списка товаров" class="crane-products__item">
+                    <article aria-labelledby="product-name" class="crane-products__card product-card">
+                        <a href="{% url 'parts:detail' part.slug %}" class="product-card__link">
+                            <div class="product-card__wrapper">
+                                <header class="product-card__header">
+                                    <h3 class="product-card__header-name h4" id="product-name">{{ part.name }}</h3>
+                                    <time class="product-card__header-year">{{ part.get_state_display }}</time>
+                                </header>
+                                <div class="product-card__body">
+                                    <div class="product-card__body-preview">
+                                        <img loading="lazy" src="{{ part.image.url }}" width="540"
+                                             height="615" alt="{{ part.title }}"
+                                             class="product-card__body-img">
+                                    </div>
+                                    <div class="product-card__body-description">
+                                        <p>{{ part.small_text }}</p>
+                                    </div>
+                                </div>
+                                <div class="product-card__footer">
+                                    <ul aria-label="Список характеристик" class="product-card__features features">
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Совместимость:</p>
+                                            <p class="features__item-value">{{ part.brand }}</p>
+                                        </li>
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">Наличие:</p>
+                                            <p class="features__item-value">
+                                                {% if part.in_stock %}
+                                                В наличии
+                                                {% else %}
+                                                Нет в наличии
+                                                {% endif %}
+                                            </p>
+                                        </li>
+                                        <li aria-label="Элемент списка характеристик" class="features__item">
+                                            <p class="features__item-index">SKU</p>
+                                            <p class="features__item-value">{{ part.sku }}</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+            <!-- Пагинация -->
+            <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1{% if selected_category %}&category={{ selected_category }}{% endif %}">&laquo; Первая</a>
+                <a href="?page={{ page_obj.previous_page_number }}{% if selected_category %}&category={{ selected_category }}{% endif %}">Предыдущая</a>
+            {% endif %}
+
+            <span class="current">
+                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}{% if selected_category %}&category={{ selected_category }}{% endif %}">Следующая</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}{% if selected_category %}&category={{ selected_category }}{% endif %}">Последняя &raquo;</a>
+            {% endif %}
+        </span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
